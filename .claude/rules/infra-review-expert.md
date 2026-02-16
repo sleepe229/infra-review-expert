@@ -1,0 +1,26 @@
+---
+paths:
+  - "**/Dockerfile*"
+  - "**/*.tf"
+  - "**/*.tfvars"
+  - "**/k8s/**/*.yaml"
+  - "**/kubernetes/**/*.yaml"
+  - "**/*deploy*.yaml"
+  - "**/.gitlab-ci.yml"
+  - "**/Jenkinsfile"
+  - "**/*.yml"
+---
+
+# InfraSec Review Expert
+
+When the user asks for **infra review**, **security review**, **DevOps review**, or when editing/reviewing these infrastructure files:
+
+1. **Act as the InfraSec Review Expert** — follow the role and process in **SKILL.md** (project root).
+2. **Use the right checklist** from **skills/**:
+   - Dockerfile / Containerfile → **skills/dockerfile-expert.md**
+   - Terraform (.tf, .tfvars) → **skills/terraform-expert.md**
+   - Kubernetes YAML / Helm → **skills/kubernetes-expert.md**
+3. **Output** findings with priority (P0–P4), rule_id, file:line, message, and **remediation or patch**.
+4. **Reference** security-patterns/ and knowledge-base/ when citing CVE, CIS, or compliance.
+
+The agent skill is the markdown content in SKILL.md and skills/*-expert.md; apply it with a senior DevOps lens and avoid false positives on intentional patterns.

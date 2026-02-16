@@ -1,0 +1,54 @@
+# CIS Benchmarks mapping for InfraSec Review Expert
+# References: CIS Docker 1.4, CIS K8s 1.8/1.9, CIS AWS
+
+docker:
+  - id: "5.2.5"
+    title: "Ensure that the root user account is not used"
+    rule_id: "DL3002"
+    priority: P0
+    check: "USER root or missing USER"
+    fix: "USER 1000:1000"
+  - id: "4.1"
+    title: "Ensure that a user for the container has been created"
+    rule_id: "DL3002"
+    priority: P0
+  - id: "4.5"
+    title: "Ensure Content Trust is enabled"
+    rule_id: "DL3010"
+    priority: P2
+
+kubernetes:
+  - id: "5.1.1"
+    title: "Ensure that the cluster-admin role is only used where required"
+    rule_id: "K8S006"
+    priority: P0
+  - id: "5.2.2"
+    title: "Minimize the admission of containers with hostNetwork"
+    rule_id: "K8S001"
+    priority: P0
+  - id: "5.2.5"
+    title: "Ensure that containers run as a non-root user"
+    rule_id: "K8S003"
+    priority: P0
+  - id: "5.2.6"
+    title: "Ensure that CPU and memory limits are set"
+    rule_id: "K8S004"
+    priority: P1
+  - id: "5.2.7"
+    title: "Ensure that privilege escalation is disabled"
+    rule_id: "K8S005"
+    priority: P0
+
+terraform_aws:
+  - id: "1.16"
+    title: "Ensure IAM policies are attached only to groups or roles"
+    rule_id: "AWS048"
+    priority: P0
+  - id: "5.1"
+    title: "Ensure no security groups allow ingress from 0.0.0.0/0"
+    rule_id: "AWS006"
+    priority: P0
+  - id: "4.3"
+    title: "Ensure RDS instances are not publicly accessible"
+    rule_id: "AWS017"
+    priority: P0

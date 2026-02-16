@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "description": "AWS security best practices reference",
+  "checks": [
+    {
+      "id": "AWS006",
+      "title": "Restrict security group ingress",
+      "ref": "CIS AWS 5.1",
+      "remediation": "Use specific CIDR blocks or security group references; avoid 0.0.0.0/0 for production"
+    },
+    {
+      "id": "AWS017",
+      "title": "RDS publicly_accessible",
+      "ref": "CIS AWS 4.3",
+      "remediation": "Set publicly_accessible = false; use VPC and private subnets"
+    },
+    {
+      "id": "AWS048",
+      "title": "IAM policy Resource = *",
+      "ref": "CIS AWS 1.16",
+      "remediation": "Scope Resource to specific ARNs (bucket, queue, topic)"
+    },
+    {
+      "id": "TF001",
+      "title": "Terraform backend encryption",
+      "remediation": "Use backend \"s3\" { encrypt = true } and optionally dynamodb_table for state lock"
+    }
+  ]
+}
